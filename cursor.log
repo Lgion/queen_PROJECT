@@ -1,14 +1,25 @@
 nohup: les entrées sont ignorées
-MESA-INTEL: warning: Performance support disabled, consider sysctl dev.i915.perf_stream_paranoid=0
-
-[90m[main 2024-11-06T16:07:23.244Z][0m update#setState disabled
-[90m[main 2024-11-06T16:07:23.291Z][0m update#ctor - updates are disabled as there is no update URL
-[91m[main 2024-11-06T16:07:23.415Z][0m [storage state.vscdb] error checking size of src.vs.platform.reactivestorage.browser.reactiveStorageServiceImpl.persistentStorage.workspaceUser: Error: Unexpected number of rows - 0
-[91m[main 2024-11-06T16:07:26.697Z][0m vscode-file: Refused to load resource /tmp/.mount_cursorGAdz5V/resources/app/extensions/theme-seti/icons/seti.woff from vscode-file: protocol (original URL: vscode-file://vscode-app/tmp/.mount_cursorGAdz5V/resources/app/extensions/theme-seti/icons/seti.woff)
-[75148:1106/173309.722311:ERROR:atom_cache.cc(229)] Add chromium/from-privileged to kAtomsToCache
-[75148:1106/173330.209020:ERROR:atom_cache.cc(229)] Add code/file-list to kAtomsToCache
+Error: Unable to retrieve mac address (unexpected format)
+    at S (/tmp/.mount_cursor1YuABf/resources/app/out/main.js:1:316561)
+    at e (/tmp/.mount_cursor1YuABf/resources/app/out/main.js:1:317120)
+    at Object.<anonymous> (/tmp/.mount_cursor1YuABf/resources/app/out/main.js:7:8489)
+    at Module._compile (node:internal/modules/cjs/loader:1256:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1311:10)
+    at Module.load (node:internal/modules/cjs/loader:1098:32)
+    at Module._load (node:internal/modules/cjs/loader:945:12)
+    at c._load (node:electron/js2c/node_init:2:13672)
+    at node:electron/js2c/browser_init:2:121151
+    at node:electron/js2c/browser_init:2:121360
+    at node:electron/js2c/browser_init:2:121364
+    at BuiltinModule.compileForInternalLoader (node:internal/bootstrap/realm:392:7)
+    at BuiltinModule.compileForPublicLoader (node:internal/bootstrap/realm:328:10)
+    at loadBuiltinModule (node:internal/modules/helpers:68:7)
+    at Module._load (node:internal/modules/cjs/loader:923:17)
+    at c._load (node:electron/js2c/node_init:2:13672)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:96:12)
+    at node:internal/main/run_main_module:23:47
 c [FetchError]: request to https://api2.cursor.sh/aiserver.v1.AuthService/DownloadUpdate failed, reason: getaddrinfo ENOTFOUND api2.cursor.sh
-    at ClientRequest.<anonymous> (/tmp/.mount_cursorxNVCOx/resources/app/out/main.js:1:313656)
+    at ClientRequest.<anonymous> (/tmp/.mount_cursor1YuABf/resources/app/out/main.js:1:313656)
     at ClientRequest.emit (node:events:514:28)
     at TLSSocket.socketErrorListener (node:_http_client:495:9)
     at TLSSocket.emit (node:events:514:28)
@@ -19,3 +30,62 @@ c [FetchError]: request to https://api2.cursor.sh/aiserver.v1.AuthService/Downlo
   errno: 'ENOTFOUND',
   code: 'ENOTFOUND'
 }
+MESA-INTEL: warning: Performance support disabled, consider sysctl dev.i915.perf_stream_paranoid=0
+
+(node:141758) UnhandledPromiseRejectionWarning: Error: net::ERR_INTERNET_DISCONNECTED
+    at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/browser_init:2:109791)
+    at SimpleURLLoaderWrapper.emit (node:events:514:28)
+(Use `cursor --trace-warnings ...` to show where the warning was created)
+(node:141758) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+[90m[main 2024-11-07T08:55:47.526Z][0m update#setState disabled
+[90m[main 2024-11-07T08:55:47.562Z][0m update#ctor - updates are disabled as there is no update URL
+[91m[main 2024-11-07T08:55:47.749Z][0m [storage state.vscdb] error checking size of src.vs.platform.reactivestorage.browser.reactiveStorageServiceImpl.persistentStorage.workspaceUser: Error: Unexpected number of rows - 0
+[91m[main 2024-11-07T08:55:52.344Z][0m vscode-file: Refused to load resource /tmp/.mount_cursorxNVCOx/resources/app/extensions/theme-seti/icons/seti.woff from vscode-file: protocol (original URL: vscode-file://vscode-app/tmp/.mount_cursorxNVCOx/resources/app/extensions/theme-seti/icons/seti.woff)
+[141758:1107/095835.626660:ERROR:atom_cache.cc(229)] Add code/file-list to kAtomsToCache
+[91m[main 2024-11-07T09:16:03.606Z][0m [uncaught exception in main]: Error: net::ERR_NAME_NOT_RESOLVED
+[91m[main 2024-11-07T09:16:03.609Z][0m Error: net::ERR_NAME_NOT_RESOLVED
+    at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/browser_init:2:109791)
+    at SimpleURLLoaderWrapper.emit (node:events:514:28)
+c [FetchError]: request to https://api2.cursor.sh/aiserver.v1.AuthService/DownloadUpdate failed, reason: getaddrinfo ENOTFOUND api2.cursor.sh
+    at ClientRequest.<anonymous> (/tmp/.mount_cursor1YuABf/resources/app/out/main.js:1:313656)
+    at ClientRequest.emit (node:events:514:28)
+    at TLSSocket.socketErrorListener (node:_http_client:495:9)
+    at TLSSocket.emit (node:events:514:28)
+    at emitErrorNT (node:internal/streams/destroy:151:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  type: 'system',
+  errno: 'ENOTFOUND',
+  code: 'ENOTFOUND'
+}
+[90m[main 2024-11-07T12:32:56.320Z][0m Extension host with pid 153675 exited with code: 0, signal: unknown.
+[141758:1107/133818.934979:ERROR:atom_cache.cc(229)] Add chromium/from-privileged to kAtomsToCache
+c [FetchError]: request to https://api2.cursor.sh/aiserver.v1.AuthService/DownloadUpdate failed, reason: getaddrinfo ENOTFOUND api2.cursor.sh
+    at ClientRequest.<anonymous> (/tmp/.mount_cursor1YuABf/resources/app/out/main.js:1:313656)
+    at ClientRequest.emit (node:events:514:28)
+    at TLSSocket.socketErrorListener (node:_http_client:495:9)
+    at TLSSocket.emit (node:events:514:28)
+    at emitErrorNT (node:internal/streams/destroy:151:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  type: 'system',
+  errno: 'ENOTFOUND',
+  code: 'ENOTFOUND'
+}
+[91m[main 2024-11-07T14:15:19.931Z][0m [uncaught exception in main]: Error: net::ERR_INTERNET_DISCONNECTED
+[91m[main 2024-11-07T14:15:19.931Z][0m Error: net::ERR_INTERNET_DISCONNECTED
+    at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/browser_init:2:109791)
+    at SimpleURLLoaderWrapper.emit (node:events:514:28)
+c [FetchError]: request to https://api2.cursor.sh/aiserver.v1.AuthService/DownloadUpdate failed, reason: getaddrinfo ENOTFOUND api2.cursor.sh
+    at ClientRequest.<anonymous> (/tmp/.mount_cursor1YuABf/resources/app/out/main.js:1:313656)
+    at ClientRequest.emit (node:events:514:28)
+    at TLSSocket.socketErrorListener (node:_http_client:495:9)
+    at TLSSocket.emit (node:events:514:28)
+    at emitErrorNT (node:internal/streams/destroy:151:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  type: 'system',
+  errno: 'ENOTFOUND',
+  code: 'ENOTFOUND'
+}
+[90m[main 2024-11-07T16:06:53.787Z][0m Extension host with pid 142062 exited with code: 0, signal: unknown.

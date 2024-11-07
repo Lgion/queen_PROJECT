@@ -1,0 +1,75 @@
+// ... styles existants ...
+
+.hero-section {
+  &--kenburns {
+    .hero-section__basic {
+      position: relative;
+      overflow: hidden;
+      height: 100vh;
+
+      figure.kenburns {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+    
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transform-origin: center center;
+          will-change: transform;
+          animation-timing-function: ease-out;
+          animation-duration: var(--duration, 20s);
+          animation-fill-mode: forwards;
+          animation-iteration-count: infinite;
+        }
+    
+        &.in img {
+          animation-name: kenburns-in;
+        }
+    
+        &.out img {
+          animation-name: kenburns-out;
+        }
+    
+        &.left img { transform-origin: left center; }
+        &.right img { transform-origin: right center; }
+        &.top img { transform-origin: center top; }
+        &.bottom img { transform-origin: center bottom; }
+      }
+
+      article {
+        position: relative;
+        z-index: 2;
+        color: white;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        padding: 2rem;
+      }
+    }
+  }
+}
+
+@keyframes kenburns-in {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(var(--scale, 1.2));
+  }
+}
+
+@keyframes kenburns-out {
+  from {
+    transform: scale(var(--scale, 1.2));
+  }
+  to {
+    transform: scale(1);
+  }
+}

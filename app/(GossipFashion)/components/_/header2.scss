@@ -6,6 +6,17 @@ header.header2 {
   border-bottom: solid;
   background: wheat;
   
+  >section {
+    >nav,>.action-buttons {
+      flex-flow: nowrap;
+      max-width: 200px;
+      overflow: hidden;
+      max-height: 75px;
+      &:hover{
+        overflow-x: scroll !important;
+      }
+    }
+  }
   &.scrolled {
     height: 50px;
     background: rgba(255, 255, 255, 0.9);

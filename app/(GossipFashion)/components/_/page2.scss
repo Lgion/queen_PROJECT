@@ -1,0 +1,369 @@
+.page2 {
+  @apply flex-grow;
+}
+
+.hero-section {
+  @apply relative min-h-[70vh] w-full overflow-hidden;
+
+  &__basic {
+    @apply h-full w-full;
+
+    figure {
+      @apply absolute inset-0;
+      
+      img, video {
+        @apply h-full w-full object-cover;
+      }
+    }
+
+    article {
+      @apply relative z-10 flex flex-col justify-center items-center h-full text-center text-white;
+      
+      header {
+        h1 {
+          @apply text-4xl md:text-6xl font-bold mb-4;
+        }
+        
+        p {
+          @apply text-xl mb-8;
+        }
+      }
+
+      footer {
+        span {
+          @apply inline-flex items-center gap-2 px-8 py-3 
+                 bg-orange-600 rounded-full 
+                 transition-colors duration-300 
+                 hover:bg-orange-700;
+        }
+      }
+    }
+  }
+
+  &--split {
+    .hero-section__container {
+      @apply h-full w-full grid;
+
+      &[class="1:1"] { @apply grid-cols-2; }
+      &[class="2:1"] { 
+        @apply grid-cols-3;
+        figure { @apply col-span-2; }
+      }
+      &[class="1:2"] {
+        @apply grid-cols-3;
+        article { @apply col-span-2; }
+      }
+
+      figure {
+        @apply relative;
+        &.image-left { @apply order-first; }
+        &.image-right { @apply order-last; }
+      }
+
+      article {
+        @apply p-8 text-gray-800;
+        &.center { @apply justify-center; }
+        &.top { @apply justify-start; }
+        &.bottom { @apply justify-end; }
+      }
+    }
+  }
+
+  &__slides {
+    @apply h-full w-full;
+  }
+
+  &__slide {
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    
+    &.active {
+      @apply opacity-100;
+    }
+  }
+
+  &__image {
+    @apply absolute inset-0;
+    
+    img {
+      @apply w-full h-full object-cover;
+    }
+  }
+
+  &__overlay {
+    @apply absolute inset-0;
+  }
+
+  &__content {
+    @apply relative z-10 container mx-auto px-4 h-full 
+           flex flex-col items-center justify-center text-center;
+
+    h1 {
+      @apply text-4xl md:text-6xl font-bold text-white mb-4;
+    }
+
+    p {
+      @apply text-xl text-white mb-8;
+    }
+  }
+
+  &__cta {
+    @apply inline-flex items-center gap-2 bg-orange-600 text-white 
+           px-8 py-3 rounded-full transition-colors duration-300 
+           hover:bg-orange-700;
+  }
+
+  // Carousel specific styles
+  &--carousel {
+    .hero-section__arrows {
+      @apply absolute inset-y-0 w-full px-4 
+             flex items-center justify-between pointer-events-none;
+    }
+
+    .hero-section__arrow {
+      @apply w-10 h-10 rounded-full bg-black/50 text-white 
+             flex items-center justify-center 
+             transition-colors duration-300 pointer-events-auto
+             hover:bg-black/70;
+    }
+
+    .hero-section__dots {
+      @apply absolute bottom-4 left-1/2 -translate-x-1/2
+             flex gap-2;
+    }
+
+    .hero-section__dot {
+      @apply w-3 h-3 rounded-full bg-white/50 
+             transition-colors duration-300
+             hover:bg-white/70;
+
+      &.active {
+        @apply bg-white;
+      }
+    }
+  }
+
+  // Transition variants
+  &--fade {
+    .hero-section__slide {
+      @apply transition-opacity duration-500;
+    }
+  }
+
+  &--slide {
+    .hero-section__slide {
+      @apply transition-transform duration-500;
+      
+      &:not(.active) {
+        @apply translate-x-full;
+      }
+    }
+  }
+
+  &--zoom {
+    .hero-section__slide.active .hero-section__image img {
+      @apply scale-105 transition-transform;
+      transition-duration: 20s;
+    }
+  }
+
+  &--parallax {
+    @apply relative h-screen overflow-hidden;
+    perspective: 1000px;
+
+    .hero-section__parallax-layer {
+      @apply absolute inset-0 bg-center bg-no-repeat bg-cover;
+      will-change: transform;
+    }
+
+    .hero-section__content {
+      @apply relative z-10;
+      will-change: transform;
+    }
+  }
+
+  &--gradient {
+    @apply relative h-[70vh] overflow-hidden;
+
+    .hero-section__gradient-overlay {
+      @apply absolute inset-0 z-10;
+    }
+
+    .hero-section__content {
+      @apply relative z-20;
+    }
+  }
+
+
+
+  // Styles spécifiques pour Parallax
+  &--parallax {
+    .parallax-layer {
+      @apply fixed inset-0;
+      will-change: transform;
+    }
+  }
+
+  // Styles spécifiques pour Animated Text
+  &--animated-text {
+    .animated-words {
+      @apply min-h-[1.5em];
+    }
+
+    .cursor {
+      @apply animate-pulse;
+    }
+
+    .typewriter {
+      @apply overflow-hidden whitespace-nowrap;
+      animation: typing 3.5s steps(40, end);
+    }
+  }
+
+  // Styles spécifiques pour CTA
+  &--cta {
+    .cta-left { @apply items-start text-left; }
+    .cta-right { @apply items-end text-right; }
+    .cta-center { @apply items-center text-center; }
+
+    .cta-filled {
+      @apply bg-orange-600 text-white;
+    }
+
+    .cta-outlined {
+      @apply border-2 border-orange-600 text-orange-600;
+    }
+
+    .cta-gradient {
+      @apply bg-gradient-to-r from-orange-600 to-red-600 text-white;
+    }
+
+    .pulse { @apply animate-pulse; }
+    .bounce { @apply animate-bounce; }
+    .shake { @apply animate-[shake_0.5s_ease-in-out_infinite]; }
+  }
+
+  // Styles spécifiques pour Video
+  &--video {
+    .video-overlay {
+      @apply absolute inset-0 z-[1];
+    }
+  }
+
+  // Styles spécifiques pour Minimalist
+  &--minimalist {
+    .spacing-loose { @apply space-y-12; }
+    .spacing-normal { @apply space-y-8; }
+    .spacing-tight { @apply space-y-4; }
+  }
+
+  // Styles spécifiques pour Geometric
+  &--geometric {
+    .geometric-shape {
+      @apply absolute z-[1];
+
+      &.circle { @apply rounded-full; }
+      &.triangle {
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      }
+
+      &.float { animation: float 3s ease-in-out infinite; }
+      &.rotate { animation: rotate 10s linear infinite; }
+      &.pulse { @apply animate-pulse; }
+    }
+  }
+
+  // Styles pour le Slider
+  &--slider {
+    .hero-section__slider {
+      @apply absolute inset-0;
+
+      .slider-slide {
+        @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+        
+        &.active {
+          @apply opacity-100;
+        }
+      }
+
+      &.slide {
+        .slider-slide {
+          @apply translate-x-full transition-transform duration-500;
+          
+          &.active {
+            @apply translate-x-0;
+          }
+        }
+      }
+
+      .slider-arrows {
+        @apply absolute inset-y-0 w-full px-4 
+               flex items-center justify-between z-20;
+
+        .slider-arrow {
+          @apply w-12 h-12 rounded-full bg-black/30 text-white
+                 flex items-center justify-center
+                 transition-all duration-300
+                 hover:bg-black/50 hover:scale-110;
+        }
+      }
+
+      .slider-dots {
+        @apply absolute bottom-4 left-1/2 -translate-x-1/2
+               flex gap-2 z-20;
+
+        .slider-dot {
+          @apply w-3 h-3 rounded-full bg-white/50
+                 transition-all duration-300
+                 hover:bg-white/80;
+
+          &.active {
+            @apply bg-white scale-125;
+          }
+        }
+      }
+    }
+  }
+
+  // Styles pour le Gradient Overlay
+  &--gradient {
+    .gradient-overlay {
+      @apply absolute inset-0 z-10 transition-opacity duration-500;
+
+      &.animate {
+        animation: gradientShift 8s linear infinite;
+        background-size: 200% 200%;
+      }
+    }
+  }
+
+
+}
+
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
