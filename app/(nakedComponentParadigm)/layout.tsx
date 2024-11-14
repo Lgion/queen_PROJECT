@@ -3,9 +3,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 import localFont from "next/font/local";
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
-import Header from "./header"
-import Footer from "./footer"
-import "./assets/scss/index.scss"
+// import "./assets/scss/index.scss"
 
 
 const geistSans = localFont({
@@ -34,9 +32,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <ClerkProvider>
-        <Header />
         {children}
-        <Footer />
       </ClerkProvider>
     </body>
   );

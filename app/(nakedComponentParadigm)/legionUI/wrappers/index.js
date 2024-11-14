@@ -10,7 +10,8 @@ export function WrapperRaw({ _,children,$ }){
     , {___svg: svg} = $||_||children
     , {elm="div",href=""} = $||_||children;
 
-    console.log("editorProps: ",editorProps);
+    console.log("props: ",props);
+    console.log("editorProps, id: ",editorProps, id);
 
     const SVG_MODE = <>
       <SvgPaths>

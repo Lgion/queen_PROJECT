@@ -90,11 +90,14 @@ box-shadow(color), background, border-color
     &§§§privateELEMENT_NAME_1 {}
 
     &__heading {
-        
+        @extend .accordion-header;
+        >button{@extend .accordion-button;}
     }
 
     &__content {
-        
+        @extend .accordion-body;
+        @extend .accordion-collapse;
+        @extend .collapse;
     }
     //bgee
     //bgm

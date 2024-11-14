@@ -1,0 +1,24 @@
+
+@import "../assets/scss/themes/template";
+@import "../assets/scss/themes/animations";
+@import "../assets/scss/utils/variables";
+@import "../assets/scss/utils/functions";
+@import "../assets/scss/utils/mixins";
+@import "../assets/scss/utils/extensions";
+
+@import "../assets/scss/base/normalize";
+@import "../assets/scss/base/base";
+@import "../assets/scss/base/typography";
+// @import "../assets/scss/vendors/";
+
+// @import "../assets/scss/components/buttons";
+@import "../assets/scss/components/index.scss";
+@import "../assets/scss/components/BOOTSTRAP5/index.scss";
+
+@import "../assets/scss/layouts/headers";
+@import "../assets/scss/layouts/navs";
+@import "../assets/scss/layouts/mains";
+@import "../assets/scss/layouts/footers";
+
+@import "../assets/scss/pages/all";
+@import "../assets/scss/pages/home";

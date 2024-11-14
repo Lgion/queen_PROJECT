@@ -11,6 +11,8 @@ export default ({ _, children, $ = _data }) => {
 
   return (
     <WrapperRaw>
+      CE COMPOSANT EST INTÉGRÉ DANS LE COMPOSANT BTN,
+      CE COMPOSANT EST DONC DEVENU OBSOLÈTE
       <button 
         type="button" 
         className={`btn-close ${white ? 'btn-close-white' : ''}`} 

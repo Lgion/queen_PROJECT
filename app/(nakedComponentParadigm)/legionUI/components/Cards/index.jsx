@@ -31,7 +31,10 @@ const _data = {
 }
 
 export default ({ _, children, $ = _data,editorProps }) => {
-  const { title, items } = $ || _ || children;
+  const { 
+    title=_data.title, 
+    items=_data.items 
+  } = $ || _ || children;
 
   return (
     <WrapperList $={{elm:"section",subElm:Card,className:"cards",items,editorProps}} />

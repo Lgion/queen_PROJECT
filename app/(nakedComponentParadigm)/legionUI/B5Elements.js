@@ -3,15 +3,21 @@ const $svg = "M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h
 , $anchor = ["#","Content Text"]
 , $anchorSvg = [...$anchor, [$svg]]
 , $svgs = ['check-circle-fill', 'info-fill', 'exclamation-triangle-fill']
+, $cls = "bi flex-shrink-0 me-2" // l'IA me dit que ces classes bootstrap sont inutiles
 
 export {$svgs}
 export function DefaultSvgPath(){ //Utilities_Features_svg
     return <path d={$svg} />
 } 
-export function SvgPaths({children,viewBox,pathsArray,className="bi flex-shrink-0 me-2",wh="24:24"}){ //Utilities_Features_svg
+export function SvgPaths({children,viewBox= "0 0 16 16",pathsArray,className,wh="24:24"}){ //Utilities_Features_svg
     // console.log(pathsArray)
     console.log(children);
-    return <svg viewBox={viewBox} width={wh.split(":")[0]} height={wh.split(":")[1]} className={className}>{
+    // Gestion plus robuste du parsing de wh
+    const [width, height] = wh?.includes(":") 
+    ? wh.split(":") 
+    : [24, 24]; // Valeurs par défaut si le format n'est pas correct
+
+    return <svg viewBox={viewBox} width={width} height={height} className={className}>{
         pathsArray?.map((pathItem,i) => typeof pathItem=="string"
             ? <path key={i} d={pathItem} />
             : Array.isArray(pathItem)
